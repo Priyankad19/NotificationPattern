@@ -19,7 +19,7 @@ namespace NotificationPattern.InMemoryDB
 
         public Employee get(string empId)
         {
-            return employeeStorage.Single(e => e.Id.Equals(empId));
+            return employeeStorage.SingleOrDefault(e => e.Id.Equals(empId));
         }
 
         public void update(Employee emp)

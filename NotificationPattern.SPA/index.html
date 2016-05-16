@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <h1>Enter employee details:</h1>
+        <p>Name : <input type="text" ng-model="name"></p>
+        <p>Designation : <input type="text" ng-model="designation"></p>
+        <p>Date Of Birth : <input type="date" ng-model="dateOfBirth"></p>
+        <input type="button" ng-click="submitForm()" />
+        Response Message : <p>{{myWelcome}}</p>
+    </div>
+    <script>
+        var app = angular.module("myApp", []);
+
+        app.controller("myCtrl", function ($scope, $http) {
+            
+            $scope.submitForm = function () {
+                console.log("hello");
+                var emp = { Name: $scope.name, Designation: $scope.designation, DateOfBirth: $scope.dateOfBirth }
+                $http.post("http://localhost:55157/api/employee", emp)
+           .then(function (response) {
+               console.log("hello 22 ");
+               $scope.myWelcome = response.data;
+           });
+            }
+
+        });
+
+    </script>
+</body>
+</html>
