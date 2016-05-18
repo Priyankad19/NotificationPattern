@@ -19,13 +19,13 @@ namespace NotificationPattern.API.Controllers
         // GET: api/Employee
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new string[] { "NotImplemented", "NotImplemented" };
         }
 
         // GET: api/Employee/5
         public string Get(int id)
         {
-            return "value";
+            return "Not implemented yet";
         }
 
         // POST: api/Employee
@@ -37,18 +37,6 @@ namespace NotificationPattern.API.Controllers
             manageEmployee.add(employee).Apply(l => ResponseStatus.setFailureStatus<String>(response, l), r => ResponseStatus.setSuccesstatus<String>(response, r));
             return response;
         }
-
-
-        // PUT: api/Employee/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE: api/Employee/5
-        public void Delete(int id)
-        {
-       
-        }
-      
+               
     }
 }

@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ErrorCodes.cs" />
     <Compile Include="IEmployeeManager.cs" />
     <Compile Include="ManageEmployee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
